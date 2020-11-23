@@ -37,7 +37,7 @@
           "bundling": {
             "element_count_threshold": 1000,
             "request_byte_threshold": 1048576,
-            "delay_threshold_millis": 50,
+            "delay_threshold_millis": 500,
             "element_count_limit": 1000000
           }
         },
