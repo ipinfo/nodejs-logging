@@ -2405,8 +2405,7 @@
                 "java_multiple_files": true,
                 "java_outer_classname": "LogSeverityProto",
                 "java_package": "com.google.logging.type",
-                "php_namespace": "Google\\Cloud\\Logging\\Type",
-                "ruby_package": "Google::Cloud::Logging::Type"
+                "php_namespace": "Google\\Cloud\\Logging\\Type"
               },
               "nested": {
                 "HttpRequest": {
@@ -2513,7 +2512,8 @@
                 "REQUIRED": 2,
                 "OUTPUT_ONLY": 3,
                 "INPUT_ONLY": 4,
-                "IMMUTABLE": 5
+                "IMMUTABLE": 5,
+                "UNORDERED_LIST": 6
               }
             },
             "MonitoredResourceDescriptor": {
@@ -2650,6 +2650,11 @@
                 "singular": {
                   "type": "string",
                   "id": 6
+                },
+                "style": {
+                  "rule": "repeated",
+                  "type": "Style",
+                  "id": 10
                 }
               },
               "nested": {
@@ -2658,6 +2663,12 @@
                     "HISTORY_UNSPECIFIED": 0,
                     "ORIGINALLY_SINGLE_PATTERN": 1,
                     "FUTURE_MULTI_PATTERN": 2
+                  }
+                },
+                "Style": {
+                  "values": {
+                    "STYLE_UNSPECIFIED": 0,
+                    "DECLARATIVE_FRIENDLY": 1
                   }
                 }
               }
@@ -3017,7 +3028,7 @@
         },
         "protobuf": {
           "options": {
-            "go_package": "github.com/golang/protobuf/protoc-gen-go/descriptor;descriptor",
+            "go_package": "google.golang.org/protobuf/types/descriptorpb",
             "java_package": "com.google.protobuf",
             "java_outer_classname": "DescriptorProtos",
             "csharp_namespace": "Google.Protobuf.Reflection",

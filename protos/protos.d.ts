@@ -1,4 +1,4 @@
-// Copyright 2020 Google LLC
+// Copyright 2021 Google LLC
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -94,7 +94,7 @@ export namespace google {
                 public protoPayload?: (google.protobuf.IAny|null);
 
                 /** LogEntry textPayload. */
-                public textPayload: string;
+                public textPayload?: (string|null);
 
                 /** LogEntry jsonPayload. */
                 public jsonPayload?: (google.protobuf.IStruct|null);
@@ -6435,7 +6435,8 @@ export namespace google {
             REQUIRED = 2,
             OUTPUT_ONLY = 3,
             INPUT_ONLY = 4,
-            IMMUTABLE = 5
+            IMMUTABLE = 5,
+            UNORDERED_LIST = 6
         }
 
         /** Properties of a MonitoredResourceDescriptor. */
@@ -6894,6 +6895,9 @@ export namespace google {
 
             /** ResourceDescriptor singular */
             singular?: (string|null);
+
+            /** ResourceDescriptor style */
+            style?: (google.api.ResourceDescriptor.Style[]|null);
         }
 
         /** Represents a ResourceDescriptor. */
@@ -6922,6 +6926,9 @@ export namespace google {
 
             /** ResourceDescriptor singular. */
             public singular: string;
+
+            /** ResourceDescriptor style. */
+            public style: google.api.ResourceDescriptor.Style[];
 
             /**
              * Creates a new ResourceDescriptor instance using the specified properties.
@@ -7001,6 +7008,12 @@ export namespace google {
                 HISTORY_UNSPECIFIED = 0,
                 ORIGINALLY_SINGLE_PATTERN = 1,
                 FUTURE_MULTI_PATTERN = 2
+            }
+
+            /** Style enum. */
+            enum Style {
+                STYLE_UNSPECIFIED = 0,
+                DECLARATIVE_FRIENDLY = 1
             }
         }
 
@@ -7243,19 +7256,19 @@ export namespace google {
             public selector: string;
 
             /** HttpRule get. */
-            public get: string;
+            public get?: (string|null);
 
             /** HttpRule put. */
-            public put: string;
+            public put?: (string|null);
 
             /** HttpRule post. */
-            public post: string;
+            public post?: (string|null);
 
             /** HttpRule delete. */
-            public delete: string;
+            public delete?: (string|null);
 
             /** HttpRule patch. */
-            public patch: string;
+            public patch?: (string|null);
 
             /** HttpRule custom. */
             public custom?: (google.api.ICustomHttpPattern|null);
@@ -11790,16 +11803,16 @@ export namespace google {
             constructor(properties?: google.protobuf.IValue);
 
             /** Value nullValue. */
-            public nullValue: (google.protobuf.NullValue|keyof typeof google.protobuf.NullValue);
+            public nullValue?: (google.protobuf.NullValue|keyof typeof google.protobuf.NullValue|null);
 
             /** Value numberValue. */
-            public numberValue: number;
+            public numberValue?: (number|null);
 
             /** Value stringValue. */
-            public stringValue: string;
+            public stringValue?: (string|null);
 
             /** Value boolValue. */
-            public boolValue: boolean;
+            public boolValue?: (boolean|null);
 
             /** Value structValue. */
             public structValue?: (google.protobuf.IStruct|null);
